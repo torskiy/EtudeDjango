@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ block.super }}:{{ case.title }}
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container-xxl my-5 min-vh-100">
+        <div class="ratio ratio-16x9 shadow-lg">
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" controls="controls" loop="loop">
+                <source src="{{ case.video.url }}" type="video/mp4">
+            </video>
+        </div>
+        <div class="my-5">
+            <h1 class="text-center fw-bold">{{ case.title }}</h1>
+            <h2 class="text-center">{{ case.description }}</h2>
+            <div class="my-3">
+                <p>{{ case.content|safe }}</p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

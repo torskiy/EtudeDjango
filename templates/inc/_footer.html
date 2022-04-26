@@ -1,0 +1,34 @@
+{% load static %}
+{% load etude_tags %}
+
+<footer class="bg-dark text-center text-white position-static bottom-0 shadow-lg">
+    {% get_main_contact as main_contact %}
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+
+            <a href="" class="link-light">{{ main_contact.instagram }}</a>
+            |
+            <a href="" class="link-light">{{ main_contact.telegram }}</a>
+            |
+            <a href="" class="link-light">{{ main_contact.vk }}</a>
+            |
+            <a href="" class="link-light">Instagram</a>
+
+        </section>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Etude:
+        <a class="text-white " href="{% url 'contact_us' %}" style="text-decoration:none; ">Связаться с нами</a>
+        <br>
+        <a class="text-white" href="tel:{{ main_contact.tel }}" style="text-decoration:none">{{ main_contact.tel }}</a>
+        |
+        <a class="text-white" href="{{ main_contact.e_mail }}" style="text-decoration:none">{{ main_contact.e_mail }}</a>
+    </div>
+    <!-- Copyright -->
+</footer>

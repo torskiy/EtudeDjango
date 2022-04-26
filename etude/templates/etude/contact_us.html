@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load etude_tags %}
+{% block title %}
+{{ block.super }}:{{ title }}
+{% endblock %}
+{% block content %}
+<main>
+    <section class="min-vh-100">
+        <div class="container-xxl my-5">
+            {% get_static_data as static_data %}
+            {{ static_data.contact_us|safe }}
+        </div>
+    </section>
+
+</main>
+{% endblock %}

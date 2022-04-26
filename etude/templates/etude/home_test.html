@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load etude_tags %}
+{% block meta %}
+{{ block.super }}
+<link href="{% static 'etude/css/style.css' %}" rel="stylesheet">
+
+{% endblock %}
+{% block title %}
+{{ block.super }}:{{ title }}TEST
+{% endblock %}
+{% block content %}
+<main>
+    <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+    <div class="overlay"></div>
+
+    {% get_static_data as static_data %}
+
+    <!-- The HTML5 video element that will create the background video on the header -->
+    <video preload autoplay loop muted playsinline>
+        <source src="{{ static_data.showreel.url }}" type="video/mp4">
+    </video>
+
+    <!-- The header content -->
+    <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+                <h1 class="invisible">ETUDE ВИДЕОПРОДАКШН</h1>
+                <p class="display-1 invisible">Duis sit amet dapibus velit, sit amet euismod ex.</p>
+                <a href="{% url 'works' %}" class="btn btn-outline-light opacity-25">ПОРТФОЛИО</a>
+            </div>
+        </div>
+    </div>
+</main>
+<section class="my-5">
+    <div class="container-xxl">
+        {% get_static_data as static_data %}
+        {{ static_data.home|safe }}
+    </div>
+</section>
+<section class="my-5">
+    <div class="container-xxl">
+        <hr>
+        <h3 class="text-center">КЛИЕНТЫ</h3>
+        <div class="row my-5">
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'etude/images/sharivari.png' %}" alt="">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'etude/images/ww.jpg' %}" alt="">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'etude/images/claas.jpg' %}" alt="">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'etude/images/harats.png' %}" alt="">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'etude/images/yarus.jpg' %}" alt="">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'etude/images/nelka.jpg' %}" alt="">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'etude/images/megagrinn.jpg' %}" alt="">
+            </div>
+            <div class="col-6 col-md-3 d-flex justify-content-center">
+                <img src="{% static 'etude/images/mezonin.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

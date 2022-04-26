@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load etude_tags %}
+{% block title %}
+{{ block.super }}:{{ title }}
+{% endblock %}
+{% block content %}
+<main>
+    <div class="container-xxl my-5 min-vh-100">
+        {% get_static_data as static_data %}
+        {{ static_data.about|safe }}
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            {% for contact in contacts %}
+
+            <div class="col">
+
+                <div class="card border-white h-100 shadow text-center">
+                    <div>
+                        <img src="{{ contact.photo.url }}" class="rounded-circle mt-4" height="135" width="135" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title fw-bold ">{{ contact.name }}<br>{{ contact.second_name }}</h4>
+                        <h5 class="card-text text-muted ">{{ contact.position }}</h5>
+                        <hr>
+                        <p class="card-text text-muted ">{{ contact.e_mail }}</p>
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-secondary" href="tel:{{ contact.tel }}">{{ contact.tel }}</a>
+                            <a class="btn btn-secondary" href="{{ contact.telegram }}">Telegram</a>
+                            <a class="btn btn-secondary" href="{{ contact.vk }}">VK</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</main>
+{% endblock %}

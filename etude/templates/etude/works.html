@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ block.super }}:{{ title }}
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container-xxl my-5 min-vh-100">
+        <div class="row row-cols-1 row-cols-md-3 g-4 my-5">
+
+            {% for case in cases %}
+
+            <div class="col">
+                <div class="card border-white shadow h-100">
+                    <img src="{{ case.title_image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">{{ case.title }}</h5>
+                        <p class="card-text">{{case.description|truncatewords:15}}</p>
+                        <a href="{{ case.get_absolute_url }}" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</main>
+{% endblock %}
