@@ -7,10 +7,13 @@
 <main>
     <div class="container-xxl my-5 min-vh-100">
         <div class="ratio ratio-16x9 shadow-lg">
-            <video playsinline="playsinline" autoplay="autoplay" muted="muted" controls="controls" loop="loop">
-                <source src="{{ case.video.url }}" type="video/mp4">
-            </video>
+            <iframe src="https://www.youtube.com/embed/xcJtL7QggTI"
+                    title="Case Video"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
         </div>
+
         <div class="my-5">
             <h1 class="text-center fw-bold">{{ case.title }}</h1>
             <h2 class="text-center">{{ case.description }}</h2>

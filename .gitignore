@@ -1,4 +1,7 @@
 .idea
 venv
+django_cache
+media
+static
 .env
 *.sqlite3

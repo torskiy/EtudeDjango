@@ -9,7 +9,7 @@ from .models import *
 class HomeView(TemplateView):
     """Главная страница"""
 
-    template_name = 'etude/home_test.html'
+    template_name = 'etude/home.html'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)

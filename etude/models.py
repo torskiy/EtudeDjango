@@ -9,7 +9,6 @@ class Case(models.Model):
     slug = models.SlugField(max_length=150, verbose_name='URL')
     description = models.CharField(max_length=255, blank=True, verbose_name='Описание кейса')
     title_image = models.ImageField(upload_to='cases/', verbose_name='Фото превью')
-    # video = models.FileField(upload_to='cases/', verbose_name='Видео')
     video = models.URLField(blank=True, verbose_name='Ссылка на видео')
     content = models.TextField(blank=True, verbose_name='Задача и решение')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')

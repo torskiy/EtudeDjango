@@ -4,10 +4,10 @@ from etude.models import Contact, StaticData
 register = template.Library()
 
 
-@register.inclusion_tag('etude/main_contact.html')
-def show_main_contact():
-    main_contact = Contact.objects.get(main_contact=True)
-    return {'main_contact': main_contact}
+# @register.inclusion_tag('etude/main_contact.html')
+# def show_main_contact():
+#     main_contact = Contact.objects.get(main_contact=True)
+#     return {'main_contact': main_contact}
 
 
 @register.simple_tag()
